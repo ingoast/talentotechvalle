@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TALLER JS - Datos Personales</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <span><a href="#modal" class="enlace-modal">Ver enunciado del taller</a> </span>
+            <h1>TALLER JS: Registro Académico</h1>
+            <p><span id="alumno">Alumno:</span> Oscar Armando Sánchez Toro</p>
+        </div>
+    </header>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <a href="#" class="cerrar-modal">&times;</a>
+            <h2>Enunciado del Taller de JS</h2>
+            <p id="enun1">Construir una pagina web que permita ingresar datos personales <span>(nombre,
+                    cedula, telefono)</span>, seleccionar la ciudad de origen de un grupo de 5 ciudades,
+                seleccionar deportes que practica de un grupo de 6 y permita ingresar el
+                nombre de las materias cursadas (máximo 6) con sus promedios.</p>
+            <p id="enun2"><mark>Deberá mostrar en pantalla los datos personales, el promedio general de sus
+                    estudios y los deportes que practica.</mark></p>
+        </div>
+    </div>
+
+    <div id="contenedor" class="container">
+        <form id="dataForm">
+            <fieldset>
+                <legend>Datos Personales</legend>
+
+                <div class="form-group">
+                    <label for="cedula">Cédula:</label>
+                    <input type="text" id="cedula" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciudad">Ciudad de origen:</label>
+                    <select id="ciudad" required>
+                        <option value="">Seleccione una ciudad</option>
+                        <option>Cali</option>
+                        <option>Bogotá</option>
+                        <option>Medellín</option>
+                        <option>Barranquilla</option>
+                        <option>Cartagena</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Deportes que practicas</legend>
+                <div class="checkbox-container">
+                    <label><input type="checkbox" value="Fútbol"> Fútbol</label>
+                    <label><input type="checkbox" value="Baloncesto"> Baloncesto</label>
+                    <label><input type="checkbox" value="Natación"> Natación</label>
+                    <label><input type="checkbox" value="Ciclismo"> Ciclismo</label>
+                    <label><input type="checkbox" value="Tenis"> Tenis</label>
+                    <label><input type="checkbox" value="Atletismo"> Atletismo</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Materias y Promedios</legend>
+                <div id="materiasContainer"></div>
+                <button onclick="agregarMateria()">Agregar Materia (máximo 6)</button>
+            </fieldset>
+
+            <button type="submit">Mostrar Resultados</button>
+
+        </form>
+
+        <div id="resultado" class="resultado">
+            <!-- Aquí se mostrarán los resultados -->
+        </div>
+
+    </div>
+    <footer>
+        <p><span style="font-weight: bold;">Presentado al profesor:</span> José Norbey Benjumea - Talento Tech
+            Valle - Desarrollo WEB full stack - 2025</p>
+    </footer>
+    <script src="script.js"></script>
+    <!-- SE COLOCO AQUI y no en el encabezado porque el type=sumit blaquea el frm -->
+</body>
+
+</html>
