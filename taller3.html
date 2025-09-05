@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<h1 id="h1">Ejemplo de JavaScript</h1>
+
+<div id="div" style="border: 1px solid black; padding: 10px; width: 200px; text-align: center; cursor:pointer; background-color: lightseagreen;">
+  <h2 style="color: red;">original</h2>
+
+</div>
+<p>cant:<span id="cantidad">1</span></p>
+
+    <script>
+        document.getElementById('h1').addEventListener("mousemove", h1color);
+        document.getElementById('h1').addEventListener("mouseout", h1color2);
+
+        document.getElementById('div').addEventListener("dblclick", presion);
+
+        function h1color() {
+            document.getElementById("h1").style.color = "blue";
+        }
+        function h1color2() {
+            document.getElementById("h1").style.color = "black";
+        }
+
+        function presion() {
+            let canti = document.getElementById('texto').value.length;
+            canti = canti * 2;
+            document.getElementById('cantidad').innerHTML = canti;
+        }
+
+
+            function duplicarDiv() {
+                const original = document.getElementById("div");
+                const copia = original.cloneNode(true); 
+                document.body.appendChild(copia);
+            }
+
+    </script>
+
+</body>
+
+</html>
