@@ -1,0 +1,361 @@
+/* Fondo con imagen */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url("imagenf.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  /* centra item V y H */
+  min-height: 100vh;
+}
+
+/* Encabezado fijo */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 25px;
+  /* para que no se vea los datos del fondo */
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  /* La línea clave para el degradado */
+  background: linear-gradient(to right, #0977edee, #ffffff, #0977edee);
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* 🔥 Esto alinea verticalmente */
+  width: 100%;
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #2c3e50;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header-content p {
+  margin: 0;
+  font-size: 16px;
+  color: #0760dc;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #ecece7;
+  white-space: nowrap;
+  padding: 5px;
+  box-shadow: 0 2px 8px rgba(243, 239, 239, 0.8);
+}
+
+/* para enunciado */
+.header-content a {
+  margin: 0;
+  font-size: 16px;
+  color: #1000f0;
+  font-weight: bold;
+  border-radius: 1px;
+  background-color: #ffffff;
+  white-space: nowrap;
+  padding: 5px;
+  box-shadow: 0 2px 8px rgba(243, 239, 239, 0.8);
+
+  /* Aplicar la animación de destello */
+  animation: destello 10s 5;
+  /* Duración de 1s, se repite 5 veces */
+}
+
+/* Definición de la animación de destello */
+@keyframes destello {
+  0% {
+    box-shadow: 0 2px 8px rgba(243, 239, 239, 0.8);
+    border-radius: none;
+  }
+
+  50% {
+    box-shadow: 0 2px 15px 5px rgba(8, 245, 158, 0.9);
+    border: #f70404 1px solid;
+  }
+
+  100% {
+    box-shadow: 0 2px 8px rgba(243, 239, 239, 0.8);
+    border-radius: none;
+  }
+}
+
+.header-content #alumno {
+  margin: 0;
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 5px;
+}
+
+/* Footer fijo */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  /* para que no se vea los datos del fondo */
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  /* La línea clave para el degradado */
+  background: linear-gradient(to right, #0977edee, #ffffff, #0977edee);
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-size: 18px;
+  /*color: #f4f804ee;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor principal */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 800px;
+  height: 70vh;
+  overflow-y: auto;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #087cf0;
+  text-align: center;
+  /* Centra el texto horizontalmente */
+}
+
+fieldset {
+  /* Establecer el conjunto de campos como un contenedor Flexbox */
+  display: flex;
+  flex-direction: column;
+  /* Apilar los grupos de formularios verticalmente */
+  gap: 15px;
+  /* Agregar espacio entre grupos de formularios */
+}
+
+fieldset button {
+  width: 300px;
+}
+
+
+.form-group {
+  /* Convertir cada grupo de formularios en un contenedor Flexbox */
+  display: flex;
+  align-items: center;
+  /* Alinear elementos verticalmente en el centro */
+}
+
+.form-group label {
+  /* Las etiquetas tengan un ancho fijo y alineen su texto a la izquierda */
+  flex-basis: 150px;
+  text-align: left;
+  margin-right: 15px;
+  /* Añade espacio entre la etiqueta y la entrada */
+}
+
+.form-group input,
+.form-group select {
+  /* las entradas y selecciones ocupen el espacio restante */
+  flex: 1;
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  /* Centra verticalmente el checkbox y el texto */
+  gap: 5px;
+  /* Añade un pequeño espacio entre el checkbox y el texto */
+}
+
+/* Opcional: Centrar los labels si están en un contenedor flex */
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+input,
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: #2c3e50;
+}
+
+/* Botones */
+button {
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Resultado */
+.resultado {
+  margin-top: 30px;
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* para mostrar enunciado */
+/* Estilos del Modal */
+.modal {
+  visibility: hidden;
+  /* Oculto por defecto */
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(142, 140, 140, 0.7);
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cuando el modal es el target (al hacer clic en el enlace) */
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Contenido del Modal */
+.modal-content {
+  background: #fff;
+  padding: 2em;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  transform: scale(0.95);
+  transition: transform 0.3s ease-in-out;
+  text-align: justify;
+  font-weight: bold;
+}
+
+/* Contenido del Modal */
+.modal-content h2 {
+  color: #3498db;
+  text-align: center;
+}
+
+.modal-content #enun1 {
+  color: #fe1a05;
+}
+
+.modal-content #enun2 {
+  color: #1916e8;
+}
+
+.modal-content #enunautor {
+  text-align: right;
+  color: #000000 !important;
+}
+
+.modal-content span {
+  color: #104af8;
+}
+
+/* Efecto para hacer aparecer el contenido */
+.modal:target .modal-content {
+  transform: scale(1);
+}
+
+/* Botón de Cierre */
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2em;
+  color: #ff0000;
+  text-decoration: none;
+}
+
+/* fin modal */
+
+/* desde el JS */
+.materia-label {
+  color: #087cf0;
+  font-weight: bold;
+}
+
+/* desde el JS  cuando crea la materia*/
+#materiasContainer div {
+  display: flex;
+  justify-content: space-between;
+  /*
+  align-items:center;
+  justify-content: space-between;
+   */
+}
+
+.materia {
+  width: 50%;
+}
+
+.promedio {
+  width: 22%;
+}
+
+/* fin JS cuando crea la materia*/
+
+#limpiar {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#limpiar:hover {
+  background-color: #0056b3;
+}
+
+/* fin desde el JS */
